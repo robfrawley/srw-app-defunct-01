@@ -6,7 +6,7 @@
  * (c) Rob Frawley 2nd <rmf@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this vinylSourceStream code.
+ * file that was distributed with this source code.
  */
 
 namespace SR\WebApp\DeveloperBundle\Command;
@@ -27,7 +27,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class ConfigEnvironmentInstallCommand extends ContainerAwareCommand
+class EnvironmentInstallFilesCommand extends ContainerAwareCommand
 {
     use InputAwareTrait;
     use StyleAwareTrait;
@@ -37,7 +37,7 @@ class ConfigEnvironmentInstallCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('sr:config:env:install-files')
+            ->setName('sr:env:install-files')
             ->setAliases(['env:install-files'])
             ->setDescription('Installs select environment dot files to repository root')
             ->addArgument('environment_name', InputArgument::OPTIONAL, 'Name of environment to use', 'default')

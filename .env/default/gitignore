@@ -26,7 +26,10 @@
 /web/bundles/
 /web/css/
 /web/js/
+/web/assets/
+/web/components/
 /composer*
 !/composer.json
 /.idea/
 /.php_cs.cache
+/node_modules/
