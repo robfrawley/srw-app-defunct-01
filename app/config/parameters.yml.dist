@@ -1,6 +1,13 @@
-# This file is a "template" of what your parameters.yml file should look like
-# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
-# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+
+#
+# This file is part of the `src-run/srw-app` project.
+#
+# (c) Rob Frawley 2nd <rmf@src.run>
+#
+# For the full copyright and license information, view the LICENSE.md
+# file distributed with this vinylSourceStream code.
+#
+
 parameters:
     database_host:     127.0.0.1
     database_port:     ~

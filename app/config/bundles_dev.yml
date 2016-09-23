@@ -8,6 +8,7 @@
 # file distributed with this vinylSourceStream code.
 #
 
-homepage:
-    path:     /
-    defaults: { _controller: FrontendBundle:Default:index }
+developer:
+  enabled: true
+  environment:
+    - idk
