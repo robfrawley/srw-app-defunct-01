@@ -1,0 +1,41 @@
+---
+
+#
+# This file is part of the `src-run/srw-app` project.
+#
+# (c) Rob Frawley 2nd <rmf@src.run>
+#
+# For the full copyright and license information, view the LICENSE.md
+# file distributed with this vinylSourceStream code.
+#
+
+name: srw-app
+
+type: php:7.0
+
+build:
+  flavor: composer
+
+relationships:
+  database: "mysqldb:mysql"
+
+web:
+  locations:
+    "/":
+      root: "web"
+      passthru: "/app.php"
+
+disk: 2048
+
+mounts:
+    "/app/cache": "shared:files/cache"
+    "/app/logs": "shared:files/logs"
+    "/app/sessions": "shared:files/sessions"
+
+hooks:
+    build: |
+      rm web/app_dev.php
+    deploy: |
+      app/console --env=prod cache:clear
+
+...

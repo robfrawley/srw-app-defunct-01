@@ -1,0 +1,16 @@
+---
+
+#
+# This file is part of the `src-run/srw-app` project.
+#
+# (c) Rob Frawley 2nd <rmf@src.run>
+#
+# For the full copyright and license information, view the LICENSE.md
+# file distributed with this vinylSourceStream code.
+#
+
+"http://{default}/":
+    type: upstream
+    upstream: "srw-app:http"
+
+...

@@ -1,0 +1,7 @@
+
+services:
+
+  sr.web_app.config.parameter_resolver:
+    class: SR\WebApp\DeveloperBundle\Component\DependencyInjection\ParameterResolver
+    calls:
+      - [setContainer, ["@service_container"]]

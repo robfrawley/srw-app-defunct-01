@@ -1,0 +1,37 @@
+<?php
+
+/*
+ * This file is part of the `src-run/srw-app` project.
+ *
+ * (c) Rob Frawley 2nd <rmf@src.run>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this vinylSourceStream code.
+ */
+
+use SLLH\StyleCIBridge\ConfigBridge;
+
+$autoLoaderPath = function() {
+    if (false === $realPath = realpath('./vendor/autoload.php')) {
+        throw new \RuntimeException('Could not locate autoloader. Use `composer install` to generate one.');
+    }
+
+    return $realPath;
+};
+
+require_once $autoLoaderPath();
+
+$header = <<<EOF
+This file is part of the `src-run/srw-app` project.
+
+(c) Rob Frawley 2nd <rmf@src.run>
+
+For the full copyright and license information, please view the LICENSE.md
+file that was distributed with this vinylSourceStream code.
+EOF;
+
+$config = ConfigBridge::create();
+
+return $config->setRules(array_merge($config->getRules(), [
+    'header_comment' => [ 'header' => $header ]
+]));

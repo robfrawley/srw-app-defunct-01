@@ -1,0 +1,37 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "color-hex-case": "lower",
+    "color-hex-length": "long",
+    "color-named": "never",
+    "color-no-invalid-hex": true,
+    "font-family-name-quotes": "always-where-recommended",
+    "font-weight-notation": "named-where-possible",
+    "number-leading-zero": "always",
+    "number-max-precision": 20,
+    "number-no-trailing-zeros": true,
+    "string-no-newline": true,
+    "string-quotes": "single",
+    "length-zero-no-unit": true,
+    "time-no-imperceptible": true,
+    "property-case": "lower",
+    "property-no-vendor-prefix": true,
+    "indentation": 2,
+    "max-empty-lines": 1,
+    "max-line-length": 120,
+    "max-nesting-depth": 12,
+    "no-extra-semicolons": true,
+    "no-indistinguishable-colors": true,
+    "no-missing-end-of-source-newline": true,
+    "scss/at-import-no-partial-leading-underscore": true,
+    "scss/at-mixin-argumentless-call-parentheses": "always",
+    "scss/dollar-variable-colon-newline-after": "always-multi-line",
+    "scss/dollar-variable-colon-space-after": "always",
+    "scss/dollar-variable-colon-space-before": "never",
+    "scss/double-slash-comment-empty-line-before": "always",
+    "scss/double-slash-comment-inline": "never",
+    "scss/double-slash-comment-whitespace-inside": "always"
+  }
+}
