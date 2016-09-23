@@ -8,5 +8,6 @@
 # file distributed with this vinylSourceStream code.
 #
 
-app_frontend:
-    resource: "@FrontendBundle/Resources/config/routing.yml"
+parameters:
+
+services:

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+  <entity repository-class="SR\WebApp\BackendBundle\Repository\EmailRepository" name="SR\WebApp\BackendBundle\Entity\Email" table="email">
+
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+
+    <field name="createdOn" type="datetime" />
+    <field name="sendDone" type="boolean" />
+    <field name="sentTo" type="simple_array" />
+    <field name="sentFrom" type="simple_array" />
+    <field name="subject" type="string" length="500" />
+    <field name="status" type="string" length="255" />
+    <field name="environment" type="string" length="40" />
+    <field name="message" type="text" column="message" />
+
+  </entity>
+
+</doctrine-mapping>

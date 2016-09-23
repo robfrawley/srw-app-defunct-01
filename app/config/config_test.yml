@@ -8,20 +8,40 @@
 # file distributed with this vinylSourceStream code.
 #
 
+#
+# perforce file resource imports
+#
+
 imports:
     - { resource: config_dev.yml }
     - { resource: bundles_dev.yml }
 
+
+#
+# main framework config
+#
+
 framework:
-    test: ~
-    session:
-        storage_id: session.storage.mock_file
-    profiler:
-        collect: false
+  test: ~
+  session:
+    storage_id: session.storage.mock_file
+  profiler:
+    collect: false
+
+
+#
+# web profiler config
+#
 
 web_profiler:
-    toolbar: false
-    intercept_redirects: false
+  toolbar: false
+  intercept_redirects: false
+
+
+#
+# email transport
+#
+
 
 swiftmailer:
-    disable_delivery: true
+  disable_delivery: true

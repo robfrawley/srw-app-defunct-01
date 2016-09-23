@@ -1,3 +1,4 @@
+---
 
 #
 # This file is part of the `src-run/srw-app` project.
@@ -8,38 +9,79 @@
 # file distributed with this vinylSourceStream code.
 #
 
-imports:
-    - { resource: config.yml }
-    - { resource: bundles_dev.yml }
+#
+# perforce file resource imports
+#
+
+imports :
+  - { resource: config.yml }
+  - { resource: bundles_dev.yml }
+
+
+#
+# main framework config
+#
 
 framework:
-    router:
-        resource: "%kernel.root_dir%/config/routing_dev.yml"
-        strict_requirements: true
-    profiler: { only_exceptions: false }
+  router:
+    resource: "%kernel.root_dir%/config/routing_dev.yml"
+    strict_requirements: true
+  profiler:
+    only_exceptions: false
+
+
+#
+# web profiler config
+#
 
 web_profiler:
-    toolbar: true
-    intercept_redirects: false
+  toolbar: true
+  intercept_redirects: false
+
+
+#
+# logger config
+#
 
 monolog:
-    handlers:
-        main:
-            type: stream
-            path: "%kernel.logs_dir%/%kernel.environment%.log"
-            level: debug
-            channels: [!event]
-        console:
-            type:   console
-            channels: [!event, !doctrine]
-        # uncomment to get logging in your browser
-        # you may have to allow bigger header sizes in your Web server configObject
-        #firephp:
-        #    type:   firephp
-        #    level:  info
-        #chromephp:
-        #    type:   chromephp
-        #    level:  info
+  handlers:
+    main:
+      type: stream
+      path: "%kernel.logs_dir%/%kernel.environment%.log"
+      level: debug
+    firephp:
+      type: firephp
+      level: info
+    chromephp:
+      type: chromephp
+      level: info
 
-#swiftmailer:
-#    delivery_address: me@example.com
+
+#
+# asset cofig
+#
+
+assetic:
+  use_controller: true
+
+
+#
+# doctrine config
+#
+
+doctrine:
+  orm:
+    metadata_cache_driver: array
+    result_cache_driver: array
+    query_cache_driver: array
+
+
+#
+# doctrine migrations config
+#
+
+doctrine_migrations :
+  dir_name: "%kernel.root_dir%/Resources/migrations"
+  namespace: SR\App\BackendBundle\Migrations
+  table_name: migration_versions
+  name: srw-app

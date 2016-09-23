@@ -1,32 +1,50 @@
+---
 
 #
-# This file is part of the `src-run/srw-app` project.
-#
-# (c) Rob Frawley 2nd <rmf@src.run>
-#
-# For the full copyright and license information, view the LICENSE.md
-# file distributed with this vinylSourceStream code.
+# perforce file resource imports
 #
 
-imports:
-    - { resource: config.yml }
-    - { resource: bundles.yml }
+imports :
+  - { resource: config.yml }
+  - { resource: bundles.yml }
 
-#doctrine:
-#    orm:
-#        metadata_cache_driver: apc
-#        result_cache_driver: apc
-#        query_cache_driver: apc
+
+#
+# main framework config
+#
+
+framework:
+  router:
+    strict_requirements: null
+
+
+#
+# doctrine config
+#
+
+doctrine:
+  orm:
+    metadata_cache_driver: apc
+    result_cache_driver: apc
+    query_cache_driver: apc
+
+
+#
+# logger config
+#
 
 monolog:
-    handlers:
-        main:
-            type:         fingers_crossed
-            action_level: error
-            handler:      nested
-        nested:
-            type:  stream
-            path:  "%kernel.logs_dir%/%kernel.environment%.log"
-            level: debug
-        console:
-            type:  console
+  handlers:
+    main:
+      type: fingers_crossed
+      action_level: error
+      handler: nested
+    nested:
+      type: stream
+      path: "%kernel.logs_dir%/%kernel.environment%.log"
+      level: debug
+
+
+# EOF
+
+...
